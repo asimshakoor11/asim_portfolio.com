@@ -895,8 +895,11 @@ h3.my-profession {
 
 
 @media (max-width: 390px) {
-.aside .logo .imgbx{
+    .aside .logo .imgbx{
     margin-left: -10px;
+}    
+    .aside .logo a span{
+    margin-left: -12px;
 }
 
 }
