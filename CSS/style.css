@@ -896,10 +896,10 @@ h3.my-profession {
 
 @media (max-width: 390px) {
     .aside .logo .imgbx{
-    margin-left: 0px;
+    margin-left: 2px;
 }    
     .aside .logo a span{
-    margin-left: 0px;
+    margin-left: -5px;
 }
 
 }
