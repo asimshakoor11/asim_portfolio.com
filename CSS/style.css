@@ -48,24 +48,23 @@ ul {
     overflow-x: hidden;
     transition: all 0.3s ease;
 }
-.section.back-section{
+
+.section.back-section {
     z-index: 1;
 }
 
-.section.active{
+.section.active {
     z-index: 2;
     opacity: 1;
     animation: slidesection 1s ease;
 }
 
-@keyframes slidesection
-{
-    0%
-    {
+@keyframes slidesection {
+    0% {
         transform: translateX(100%)
     }
-    100%
-    {
+
+    100% {
         transform: translateX(0%);
     }
 }
@@ -180,7 +179,7 @@ ul {
     border-bottom: 1px solid var(--bg-black-50);
 }
 
-.aside .logo .imgbx{
+.aside .logo .imgbx {
     position: relative;
     width: 170px;
     height: 170px;
@@ -191,7 +190,7 @@ ul {
     display: none;
 }
 
-.aside .logo .imgbx img{
+.aside .logo .imgbx img {
     position: absolute;
     top: 0;
     left: 0;
@@ -200,16 +199,16 @@ ul {
     object-fit: cover;
 }
 
-.aside .logo a{
+.aside .logo a {
     color: var(--text-black-900);
     font-family: 300;
     margin: 15px 25px;
     font-size: 25px;
 }
 
-.aside .logo a span{
+.aside .logo a span {
     color: var(--skin-color);
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 600;
     margin-left: -14px;
 }
@@ -239,7 +238,7 @@ ul {
     position: relative;
 }
 
-.aside .nav-toggler.open span{
+.aside .nav-toggler.open span {
     background-color: transparent;
 }
 
@@ -253,7 +252,7 @@ ul {
     left: 0;
 }
 
-.aside .nav-toggler.open span::before{
+.aside .nav-toggler.open span::before {
     transform: rotate(45deg);
     top: 0;
 }
@@ -268,14 +267,13 @@ ul {
     left: 0;
 }
 
-.aside .nav-toggler.open span::after{
+.aside .nav-toggler.open span::after {
     transform: rotate(-45deg);
     top: 0;
 }
 
 .aside .nav {
     margin-top: 40px;
-
 }
 
 .aside .nav li {
@@ -300,7 +298,7 @@ ul {
     /* border-radius: 10px;
     background-color: var(--skin-color);
     color: #ffffff; */
-    color:var(--skin-color);
+    color: var(--skin-color);
 }
 
 .aside .nav li a i {
@@ -327,7 +325,7 @@ h3.hello {
 }
 
 h3.hello span {
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 30px;
     font-weight: 700px;
     color: var(--skin-color);
@@ -422,12 +420,6 @@ h3.my-profession {
     display: inline-block;
 }
 
-.about .about-content .personal-info .info-item p span a{
-    font-weight: 400;
-    color: var(--text-black-700);
-    margin-left: 4px;
-    display: inline-block;
-}
 
 .about .about-content .personal-info .buttons {
     margin-top: 30px;
@@ -709,7 +701,7 @@ h3.my-profession {
     margin: 15px 0 5px;
 }
 
-.contact .contact-info-item h4 a{
+.contact .contact-info-item h4 a {
     font-size: 18px;
     font-weight: 700;
     color: var(--text-black-900);
@@ -717,14 +709,14 @@ h3.my-profession {
     margin: 15px 0 5px;
 }
 
-.contact .contact-info-item p{
+.contact .contact-info-item p {
     font-size: 16px;
     line-height: 25px;
     color: var(--text-black-700);
     font-weight: 400;
 }
 
-.contact .contact-info-item p a{
+.contact .contact-info-item p a {
     font-size: 16px;
     line-height: 25px;
     color: var(--text-black-700);
@@ -781,35 +773,37 @@ h3.my-profession {
 }
 
 @media (max-width: 1199px) {
-    .section .container{
+    .section .container {
         padding-top: 70px;
     }
+
     .aside {
         left: -270px;
     }
 
-    .aside.open{
+    .aside.open {
         left: 0;
     }
 
-    .aside .nav-toggler{
+    .aside .nav-toggler {
         display: flex;
         left: 30px;
     }
 
-    .aside .nav-toggler.open{
+    .aside .nav-toggler.open {
         left: 300px;
     }
 
-    .section{
+    .section {
         left: 0;
     }
 
-    .section.open{
+    .section.open {
         left: 270px;
     }
+
     .about .about-content .personal-info .info-item p span {
-        display: block;
+        display: inline-block;
         margin-left: 0;
     }
 }
@@ -820,34 +814,34 @@ h3.my-profession {
         top: 20px;
     }
 
-    .aside .logo .imgbx{
+    .aside .logo .imgbx {
         margin-left: -15px;
     }
-    
-   
-    .aside .logo a{
+
+
+    .aside .logo a {
         color: var(--text-black-900);
         font-family: 200;
         padding: 15px 20px;
         font-size: 22px;
     }
-    
-    .aside .logo a span{
+
+    .aside .logo a span {
         margin-left: -34px;
     }
 
-    .aside .logo a span{
+    .aside .logo a span {
         color: var(--skin-color);
         font-weight: 600;
     }
 
-    .aside .logo .imgbx{
+    .aside .logo .imgbx {
         display: block;
     }
 
     .aside .nav {
         margin-top: 250px;
-    
+
     }
 
     .portfolio .portfolio-item {
@@ -869,7 +863,8 @@ h3.my-profession {
     .home .home-img {
         display: none;
     }
-    .section.open{
+
+    .section.open {
         left: 0;
     }
 }
@@ -888,21 +883,33 @@ h3.my-profession {
         max-width: 100%;
     }
 
-    .section.open{
+    .section.open {
         left: 0;
     }
 }
 
 
 @media (max-width: 390px) {
+    
     .aside .logo .imgbx {
-        margin-left: -10px;
+        margin-left: -8px;
     }
-
-
     .aside .logo a span {
-        margin-left: -35px;
+        margin-left: -28px;
     }
 
 }
+
+@media (max-height: 560px) {
+    .aside .nav {
+        margin-top: 260px;
+    
+    }
+    
+    .aside .nav li {
+        margin-bottom: 10px;
+        display: block;
+    }
+}
+
 
