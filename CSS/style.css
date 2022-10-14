@@ -809,6 +809,14 @@ h3.my-profession {
 }
 
 @media (max-width: 991px) {
+    
+    .section {
+        position: relative;
+    }
+
+    .section.active {
+        animation: none;
+    }
 
     .aside .logo {
         top: 20px;
