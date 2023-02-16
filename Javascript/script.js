@@ -23,17 +23,15 @@ for (let i = 0; i < totalNavList; i++) {
         }
     })
 }
-function removebacksection()
-{
+function removebacksection() {
     for (let i = 0; i < totalSection; i++) {
         allSection[i].classList.remove("back-section");
     }
 }
 
-function addbacksection(num)
-{
+function addbacksection(num) {
     allSection[num].classList.add("back-section");
-    
+
 }
 
 function showSection(element) {
@@ -69,8 +67,42 @@ navTogglerBtn.addEventListener("click", () => {
 function asideSectionTogglerBtn() {
     aside.classList.toggle("open");
     navTogglerBtn.classList.toggle("open");
-    for (let i=0; i<totalSection; i++)
-    {
+    for (let i = 0; i < totalSection; i++) {
         allSection[i].classList.toggle("open");
     }
 }
+
+// sending email 
+
+// var btn = document.getElementById('btnlast');
+// btn.addEventListener('click', function(e){
+// e.preventDefault()
+// var name = document.getElementById('Name').value;
+// var email = document.getElementById('Email').value;
+// var subject = document.getElementById('Subject').value;
+// var message = document.getElementById('Message').value;
+// var body = 'Name: ' +name + '<br/> Email: ' +email + '<br/> Subject: ' +subject + '<br/> Message: ' +message  
+
+
+function sendMsg(e) {
+    const form = document.querySelector('.contact_form');
+    e.preventDefault();
+    
+     const   name = document.querySelector('.name'),
+        email = document.querySelector('.email'),
+        subject = document.querySelector('.subject'),
+        message = document.querySelector('.message');
+
+    Email.send({
+        SecureToken: "6858a357-4b3c-400e-80ac-72dfaf1d2c62",
+        To: 'asimshakoor920830@gmail.com',
+        From: email.value,
+        Subject: subject.value,
+        Body: message.value
+    }).then(
+        message => alert(message)
+    );
+}
+
+form.addEventListener('submit', sendMsg)
+// })
