@@ -85,21 +85,16 @@ function asideSectionTogglerBtn() {
 
 
 function sendmail() {
-       const name = document.querySelector('.name'),
-        email = document.querySelector('.email'),
-        subject = document.querySelector('.subject'),
-        message = document.querySelector('.message');
-
         Email.send({
             Host : "smtp.elasticemail.com",
             Username : "asimshakoor920830@gmail.com",
             Password : "110B1A590D9E27E712E6725469D33DF903F6",
-            To : 'asimshakoor920830@gmail.com',
-            From : email.value,
-            Subject : subject.value,
-            Body : message.value
+            To : "asimshakoor920830@gmail.com",
+            From : document.getElementById("email").value,
+            Subject : document.getElementById("subject").value,
+            Body : document.getElementById("message").value
         }).then(
-          message => alert("mail sent")
+          message => alert("Thanks! Mail Sent Successfully")
         );
 }
 
