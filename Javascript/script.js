@@ -72,30 +72,32 @@ function asideSectionTogglerBtn() {
     }
 }
 
-// sending email 
+// ******sending email 
 
-// var btn = document.getElementById('btnlast');
-// btn.addEventListener('click', function(e){
-// e.preventDefault()
-// var name = document.getElementById('Name').value;
-// var email = document.getElementById('Email').value;
-// var subject = document.getElementById('Subject').value;
-// var message = document.getElementById('Message').value;
-// var body = 'Name: ' +name + '<br/> Email: ' +email + '<br/> Subject: ' +subject + '<br/> Message: ' +message  
+function sendMail() {
+    var params = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+    };
 
+    const servieID = "service_3myjm7y";
+    const templateID = "template_b0wznsl";
 
-function sendmail() {
-        Email.send({
-            Host : "smtp.elasticemail.com",
-            Username : "asimshakoor920830@gmail.com",
-            Password : "110B1A590D9E27E712E6725469D33DF903F6",
-            To : "asimshakoor920830@gmail.com",
-            From : document.getElementById("email").value,
-            Subject : document.getElementById("subject").value,
-            Body : document.getElementById("message").value
-        }).then(
-          message => alert("Thanks! Mail Sent Successfully")
-        );
+    emailjs
+        .send(servieID, templateID, params)
+        .then((res) => {
+            document.getElementById('name').value = "";
+            document.getElementById('email').value = "";
+            document.getElementById('subject').value = "";
+            document.getElementById('message').value = "";
+            console.log(res);
+            alert("Your Messsage Sent Successfully!")
+
+        })
+        .catch((err) => console.log(err));
 }
 
-// })
+
+
