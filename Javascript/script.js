@@ -79,50 +79,52 @@ function asideSectionTogglerBtn() {
 
 
 //scrolling 
-window.addEventListener('scroll', function(){
-    let navhome = this.document.getElementById("navhome");
-    let navabout = this.document.getElementById("navabout");
-    let navservice = this.document.getElementById("navservice");
-    let navportfolio = this.document.getElementById("navportfolio");
-    let navcontact = this.document.getElementById("navcontact");
-
-
-    if(window.pageYOffset > 0 && window.pageYOffset < 600){
-        navhome.classList.add("active");
-        navabout.classList.remove("active");
-        navportfolio.classList.remove("active");
-        navcontact.classList.remove("active");
-        navservice.classList.remove("active");
-    }
-    else if(window.pageYOffset > 600 && window.pageYOffset < 2600){
-        navhome.classList.remove("active");
-        navservice.classList.remove("active");
-        navportfolio.classList.remove("active");
-        navcontact.classList.remove("active");
-        navabout.classList.add("active");
-    } 
-    else if(window.pageYOffset > 2600 && window.pageYOffset < 3400){
-        navhome.classList.remove("active");
-        navabout.classList.remove("active");
-        navportfolio.classList.remove("active");
-        navcontact.classList.remove("active");
-        navservice.classList.add("active");
-    } 
-    else if(window.pageYOffset > 3400 && window.pageYOffset < 7500){
-        navabout.classList.remove("active");
-        navservice.classList.remove("active");
-        navhome.classList.remove("active");
-        navcontact.classList.remove("active");
-        navportfolio.classList.add("active");
-    }   
-    else if(window.pageYOffset > 7500){
-        navabout.classList.remove("active");
-        navservice.classList.remove("active");
-        navhome.classList.remove("active");
-        navcontact.classList.add("active");
-        navportfolio.classList.remove("active");
-    } 
-});
+if (window.screen.width>1000){
+    window.addEventListener('scroll', function(){
+        let navhome = this.document.getElementById("navhome");
+        let navabout = this.document.getElementById("navabout");
+        let navservice = this.document.getElementById("navservice");
+        let navportfolio = this.document.getElementById("navportfolio");
+        let navcontact = this.document.getElementById("navcontact");
+    
+    
+        if(window.pageYOffset > 0 && window.pageYOffset < 600){
+            navhome.classList.add("active");
+            navabout.classList.remove("active");
+            navportfolio.classList.remove("active");
+            navcontact.classList.remove("active");
+            navservice.classList.remove("active");
+        }
+        else if(window.pageYOffset > 600 && window.pageYOffset < 2600){
+            navhome.classList.remove("active");
+            navservice.classList.remove("active");
+            navportfolio.classList.remove("active");
+            navcontact.classList.remove("active");
+            navabout.classList.add("active");
+        } 
+        else if(window.pageYOffset > 2600 && window.pageYOffset < 3400){
+            navhome.classList.remove("active");
+            navabout.classList.remove("active");
+            navportfolio.classList.remove("active");
+            navcontact.classList.remove("active");
+            navservice.classList.add("active");
+        } 
+        else if(window.pageYOffset > 3400 && window.pageYOffset < 7500){
+            navabout.classList.remove("active");
+            navservice.classList.remove("active");
+            navhome.classList.remove("active");
+            navcontact.classList.remove("active");
+            navportfolio.classList.add("active");
+        }   
+        else if(window.pageYOffset > 7500){
+            navabout.classList.remove("active");
+            navservice.classList.remove("active");
+            navhome.classList.remove("active");
+            navcontact.classList.add("active");
+            navportfolio.classList.remove("active");
+        } 
+    });
+}
 
 
 /* Back to top button
