@@ -102,21 +102,21 @@ if (window.screen.width>1000){
             navcontact.classList.remove("active");
             navabout.classList.add("active");
         } 
-        else if(window.pageYOffset > 2600 && window.pageYOffset < 3400){
+        else if(window.pageYOffset > 2600 && window.pageYOffset < 4400){
             navhome.classList.remove("active");
             navabout.classList.remove("active");
             navportfolio.classList.remove("active");
             navcontact.classList.remove("active");
             navservice.classList.add("active");
         } 
-        else if(window.pageYOffset > 3400 && window.pageYOffset < 7500){
+        else if(window.pageYOffset > 4400 && window.pageYOffset < 9300){
             navabout.classList.remove("active");
             navservice.classList.remove("active");
             navhome.classList.remove("active");
             navcontact.classList.remove("active");
             navportfolio.classList.add("active");
         }   
-        else if(window.pageYOffset > 7500){
+        else if(window.pageYOffset > 9300){
             navabout.classList.remove("active");
             navservice.classList.remove("active");
             navhome.classList.remove("active");
