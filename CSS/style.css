@@ -343,6 +343,11 @@ ul {
     max-width: 60%;
 }
 
+.home .home-info p{
+    text-align: justify;
+    font-size: 16px;
+}
+
 h3.hello {
     font-size: 28px;
     margin: 15px 0;
@@ -643,7 +648,6 @@ h3.my-profession {
     margin-bottom: 15px;
     color: var(--text-black-900);
     font-weight: 700;
-    text-transform: capitalize;
 }
 
 .service .service-item .service-item-inner p {
