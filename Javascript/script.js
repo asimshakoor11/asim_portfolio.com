@@ -1,6 +1,10 @@
 
 
-// aside 
+// aside
+
+    $(window).on("load", function(){
+        $(".preloader").addClass("loaded");
+    })
 
 const nav = document.querySelector(".nav"),
     navList = nav.querySelectorAll("li"),
