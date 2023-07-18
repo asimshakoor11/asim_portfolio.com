@@ -92,6 +92,10 @@ ul {
     animation: ani01 2s linear infinite;
 }
 
+.active{
+    color: var(--skin-color);
+}
+
 /* //section */
 
 .section {
