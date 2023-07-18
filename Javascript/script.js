@@ -83,51 +83,37 @@ function asideSectionTogglerBtn() {
 
 
 //scrolling 
-if (window.screen.width>1000){
-    window.addEventListener('scroll', function(){
-        let navhome = this.document.getElementById("navhome");
-        let navabout = this.document.getElementById("navabout");
-        let navservice = this.document.getElementById("navservice");
-        let navportfolio = this.document.getElementById("navportfolio");
-        let navcontact = this.document.getElementById("navcontact");
-    
-    
-        if(window.pageYOffset > 0 && window.pageYOffset < 600){
-            navhome.classList.add("active");
-            navabout.classList.remove("active");
-            navportfolio.classList.remove("active");
-            navcontact.classList.remove("active");
-            navservice.classList.remove("active");
-        }
-        else if(window.pageYOffset > 600 && window.pageYOffset < 2600){
-            navhome.classList.remove("active");
-            navservice.classList.remove("active");
-            navportfolio.classList.remove("active");
-            navcontact.classList.remove("active");
-            navabout.classList.add("active");
-        } 
-        else if(window.pageYOffset > 2600 && window.pageYOffset < 4400){
-            navhome.classList.remove("active");
-            navabout.classList.remove("active");
-            navportfolio.classList.remove("active");
-            navcontact.classList.remove("active");
-            navservice.classList.add("active");
-        } 
-        else if(window.pageYOffset > 4400 && window.pageYOffset < 9300){
-            navabout.classList.remove("active");
-            navservice.classList.remove("active");
-            navhome.classList.remove("active");
-            navcontact.classList.remove("active");
-            navportfolio.classList.add("active");
-        }   
-        else if(window.pageYOffset > 9300){
-            navabout.classList.remove("active");
-            navservice.classList.remove("active");
-            navhome.classList.remove("active");
-            navcontact.classList.add("active");
-            navportfolio.classList.remove("active");
-        } 
-    });
+
+// / Get all sections that have an ID defined
+const sections = document.querySelectorAll("section[id]");
+
+// Add an event listener listening for scroll
+window.addEventListener("scroll", navHighlighter);
+
+function navHighlighter() {
+
+  // Get current scroll position
+  let scrollY = window.pageYOffset;
+
+  // Now we loop through sections to get height, top and ID values for each
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 50;
+    sectionId = current.getAttribute("id");
+
+    /*
+    - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
+    - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
+    */
+    if (
+      scrollY > sectionTop &&
+      scrollY <= sectionTop + sectionHeight
+    ){
+      document.querySelector(".navigation a[href*=" + sectionId + "]").classList.add("active");
+    } else {
+      document.querySelector(".navigation a[href*=" + sectionId + "]").classList.remove("active");
+    }
+  });
 }
 
 
@@ -209,6 +195,3 @@ function sendMail() {
     }
 
 }
-
-
-
