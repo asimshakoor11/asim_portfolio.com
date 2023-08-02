@@ -116,6 +116,26 @@ function navHighlighter() {
   });
 }
 
+function togglearea() {
+    let arrdown = document.getElementById("arrdown");
+    let arrup = document.getElementById("arrup");
+    let displayrow = document.getElementById("display_row");
+
+    arrdown.classList.toggle('hidden');
+    arrup.classList.toggle('hidden');
+    displayrow.classList.toggle('hidden');
+}
+
+function togglearea2() {
+    let arrdown = document.getElementById("arrdown2");
+    let arrup = document.getElementById("arrup2");
+    let displayrow = document.getElementById("display_row2");
+
+    arrdown.classList.toggle('hidden');
+    arrup.classList.toggle('hidden');
+    displayrow.classList.toggle('hidden');
+}
+
 
 /* Back to top button
    */
@@ -195,3 +215,6 @@ function sendMail() {
     }
 
 }
+
+
+
