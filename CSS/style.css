@@ -713,11 +713,28 @@ h3.my-profession {
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
 }
 
 .portfolio .portfolio-heading h2 {
     color: var(--text-black-900);
     font-weight: 500;
+    width: fit-content;
+
+}
+
+.portfolio .portfolio-heading i{
+    font-size: 20px;
+    margin-left: 1%;
+    color: var(--text-black-700);
+    margin-top: 3px;
+}
+
+.portfolio .portfolio-heading i.hidden{
+    display: none;
 }
 
 .portfolio .portfolio-item {
@@ -731,11 +748,66 @@ h3.my-profession {
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
+    position: relative;
 }
 
 .portfolio .portfolio-item-inner .portfolio-img img {
     width: 100%;
     display: block;
+    filter: grayscale(0);
+    transition: all 0.6s ease;
+}
+
+.portfolio .portfolio-item-inner .portfolio-img:hover img {
+    filter: grayscale(100%);
+    transform: scale(1.02);
+}
+
+.portfolio .portfolio-item-inner .portfolio-img .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+.portfolio .portfolio-item-inner .portfolio-img:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+}
+
+.portfolio .portfolio-item-inner .portfolio-img .overlay h4 {
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0;
+    transform: translateX(30px);
+    transition: all 0.6s ease;
+}
+
+.portfolio .portfolio-item-inner .portfolio-img .overlay .btn-visit {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 30px;
+    transform: translateX(30px);
+    transition: all 0.6s ease;
+}
+
+.portfolio .portfolio-item-inner .portfolio-img .overlay:hover .btn-visit {
+    transform: translateX(0);
+}
+
+.portfolio .portfolio-item-inner .portfolio-img .overlay .btn-visit:hover {
+    transform: scale(1.02);
+}
+
+.portfolio .portfolio-item-inner .portfolio-img .overlay:hover h4 {
+    transform: translateX(0);
 }
 
 /* CONTACT  */
@@ -1014,6 +1086,8 @@ h3.my-profession {
 
 
 @media (max-width: 390px) {
+
+    
     
     .aside .logo .imgbx {
         margin-left: -8px;
@@ -1025,6 +1099,16 @@ h3.my-profession {
 }
 
 @media (max-height: 560px) {
+
+    .portfolio .portfolio-item-inner .portfolio-img .overlay{
+        display: none !important;
+        visibility: hidden;
+    }
+
+    .portfolio .portfolio-item-inner .portfolio-img:hover img {
+        filter: grayscale(0);
+    }
+
     .aside .nav {
         margin-top: 260px;
     
