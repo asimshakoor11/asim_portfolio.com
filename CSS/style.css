@@ -1079,6 +1079,19 @@ h3.my-profession {
 
 @media (max-width: 767px) {
 
+     .portfolio .portfolio-item-inner .portfolio-img .overlay{
+        display: none !important;
+        visibility: hidden;
+    }
+
+    .portfolio .portfolio-item-inner .portfolio-img:hover img {
+        filter: grayscale(0);
+    }    
+    .portfolio .portfolio-item-inner .portfolio-img:hover .overlay {
+    display: none !important;
+        visibility: hidden;
+}
+
     .contact .contact-form .col-6,
     .contact .contact-info-item,
     .service .service-item,
