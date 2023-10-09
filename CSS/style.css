@@ -247,18 +247,23 @@ ul {
     top: 60px;
     font-size: 20px;
     text-transform: capitalize;
-    padding-left: 30px;
+    padding-left: 30px 0;
     border-bottom: 1px solid var(--bg-black-50);
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .aside .logo .imgbx {
     position: relative;
-    width: 170px;
-    height: 170px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     overflow: hidden;
-    margin-left: -20px;
-    margin-bottom: 10px;
+    /* margin-left: -20px;
+    margin-bottom: 10px; */
     display: none;
 }
 
@@ -274,15 +279,19 @@ ul {
 .aside .logo a {
     color: var(--text-black-900);
     font-family: 300;
-    margin: 15px 25px;
+    /* margin: 15px 25px; */
     font-size: 25px;
+    text-align: center;
 }
 
 .aside .logo a span {
     color: var(--skin-color);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 600;
-    margin-left: -14px;
+    font-size: 22px;
+    /* margin-left: -14px; */
+    text-align: center;
+
 }
 
 .aside .nav-toggler {
@@ -1011,19 +1020,21 @@ h3.my-profession {
     }
 
     .aside .logo .imgbx {
-        margin-left: -15px;
+        /* margin-left: -15px; */
     }
 
 
     .aside .logo a {
         color: var(--text-black-900);
         font-family: 200;
-        padding: 15px 20px;
+        /* padding: 15px 20px; */
         font-size: 22px;
     }
 
     .aside .logo a span {
-        margin-left: -34px;
+        /* margin-left: -34px; */
+        font-size: 20px;
+        
     }
 
     .aside .logo a span {
@@ -1085,25 +1096,16 @@ h3.my-profession {
 }
 
 
-@media (max-width: 390px) {
-
-    
-    
-    .aside .logo .imgbx {
-        margin-left: -8px;
-    }
-    .aside .logo a span {
-        margin-left: -28px;
-    }
-
-}
-
 @media (max-height: 560px) {
 
     .portfolio .portfolio-item-inner .portfolio-img .overlay{
         display: none !important;
         visibility: hidden;
     }
+
+    .portfolio .portfolio-item-inner .portfolio-img:hover img {
+        filter: grayscale(0);
+    }    
 
     .portfolio .portfolio-item-inner .portfolio-img:hover img {
         filter: grayscale(0);
@@ -1120,3 +1122,25 @@ h3.my-profession {
     }
 }
 
+
+
+
+@media (max-width: 390px) {
+
+    .portfolio .portfolio-item-inner .portfolio-img .overlay{
+        display: none !important;
+        visibility: hidden;
+    }
+
+    .portfolio .portfolio-item-inner .portfolio-img:hover img {
+        filter: grayscale(0);
+    }    
+    
+    .aside .logo .imgbx {
+        /* margin-left: -8px; */
+    }
+    .aside .logo a span {
+        /* margin-left: -28px; */
+    }
+
+}
