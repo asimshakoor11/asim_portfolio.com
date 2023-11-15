@@ -184,10 +184,16 @@ function togglearea2() {
 
 
 function sendMail() {
+    let validRegex = /^([a-zA-Z])([\w-.]*)@([\w]+)([\w-.])*\.(aero|asia|be|biz|com.ar|ca|co|co.in|co.jp|co.kr|co.sg|com|com.ar|com.mx|com.sg|com.ph|co.uk|coop|de|edu|es|fr|gov|in|info|it|jobs|ltd|mil|mobi|museum|name|net|net.mx|org|ru|us)+$/;
 
     if ((document.getElementById('name').value == "") || (document.getElementById('email').value == "") || (document.getElementById('message').value == "")) {
-        alert("Kindly! First fill the required details")
+        alert("Kindly! Fill the required details")
     }
+
+    else if (!document.getElementById('email').value.match(validRegex)) {
+        alert("Alert! Invalid email address!");
+        document.getElementById('email').focus();
+      }
 
     else {
         var params = {
