@@ -6,6 +6,12 @@
     --bg-black-50: #e8dfec;
     --text-black-900: #302e4d;
     --text-black-700: #504e70;
+    --dark: #34495e;
+    --light: #ffffff;
+    --welcome: #0abf30;
+    --error: #e24d4c;
+    --warning: #e9bd0c;
+    --info: #3498db;
 }
 
 body {
@@ -14,12 +20,20 @@ body {
     font-family: 'Poppins' sans-serif;
 }
 
+/* body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--dark);
+} */
+
 html{
     scroll-behavior: smooth;
 }
 
 html::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
 }
 
 html::-webkit-scrollbar-track {
@@ -214,8 +228,8 @@ ul {
     border: none;
     background: var(--skin-color);
     transition: all 0.3s ease;
-    cursor: pointer;
 
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -1159,5 +1173,196 @@ h3.my-profession {
     .aside .logo a span {
         /* margin-left: -28px; */
     }
-
 }
+
+
+.notifications {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    font-family: "Poppins", sans-serif;
+    z-index: 9999;
+  }
+  .notifications :where(.toast, .column) {
+    display: flex;
+    align-items: center;
+  }
+  .notifications .toast {
+    width: 400px;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    border-radius: 4px;
+    padding: 16px 17px;
+    margin-bottom: 10px;
+    background: var(--light);
+    justify-content: space-between;
+    animation: show_toast 0.3s ease forwards;
+  }
+  @keyframes show_toast {
+    0% {
+      transform: translateX(100%);
+    }
+    40% {
+      transform: translateX(-5%);
+    }
+    80% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-10px);
+    }
+  }
+  .notifications .toast.hide {
+    animation: hide_toast 0.3s ease forwards;
+  }
+  @keyframes hide_toast {
+    0% {
+      transform: translateX(-10px);
+    }
+    40% {
+      transform: translateX(0%);
+    }
+    80% {
+      transform: translateX(-5%);
+    }
+    100% {
+      transform: translateX(calc(100% + 20px));
+    }
+  }
+  .toast::before {
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    animation: progress 5s linear forwards;
+  }
+  @keyframes progress {
+    100% {
+      width: 0%;
+    }
+  }
+  .toast.sended::before,
+  .btn#sended {
+    background: var(--welcome);
+  }
+  .toast.details::before,
+  .btn#details {
+    background: var(--error);
+  }
+  .toast.invalidemail::before,
+  .btn#invalidemail {
+    background: var(--info);
+  }
+  .toast .column i {
+    font-size: 1.75rem;
+  }
+  .toast.sended .column i{
+    color: var(--welcome);
+  }
+  .toast.invalidemail .column i {
+    color: var(--info);
+  }
+  .toast.details .column i {
+    color: var(--error);
+  }
+  .toast .column span {
+    font-size: 1.07rem;
+    margin-left: 12px;
+  }
+  .toast i:last-child {
+    color: #aeb0d7;
+    cursor: pointer;
+  }
+  .toast i:last-child:hover {
+    color: var(--dark);
+  }
+  .buttons .btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 0 5px;
+    color: var(--light);
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+  
+  @media screen and (max-width: 530px) {
+    .notifications {
+      width: 95%;
+    }
+    .notifications .toast {
+      width: 100%;
+      font-size: 1rem;
+      margin-left: 20px;
+    }
+    .buttons .btn {
+      margin: 0 1px;
+      font-size: 1.1rem;
+      padding: 8px 15px;
+    }
+  }
+  /* toast code */
+  
+  .screen{
+    display: none;
+  }
+  
+  @media screen and (max-width: 900px) {
+    .screen {
+      background-color: #34a2fa;
+      position: fixed;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .screen div {
+      padding: 20px;
+      border: 1px solid white;
+      border-radius: 10px;
+    }
+  
+    .screen div > :nth-child(1) {
+      color: white;
+      font-size: 15px;
+      font-weight: 900px;
+      margin: 5px;
+      text-align: center;
+    }
+  
+    .screen div > :nth-child(2) {
+      color: white;
+      font-size: 13px;
+      font-weight: 500px;
+      margin: 5px;
+      text-align: center;
+    }
+  
+    .screen div > :nth-child(3) {
+      color: white;
+      font-size: 12px;
+      font-weight: 400px;
+      margin: 5px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-style: italic;
+      text-decoration: underline;
+    }
+  
+    .screen div > :nth-child(4) {
+      color: white;
+      font-size: 12px;
+      font-weight: 400px;
+      margin: 5px;
+      text-align: center;
+    }
+  }
+  
