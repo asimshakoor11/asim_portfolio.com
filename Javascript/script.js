@@ -2,10 +2,62 @@
 
 // aside
 
-    $(window).on("load", function(){
-        $(".preloader").addClass("loaded");
-    })
+$(window).on("load", function(){
+    $(".preloader").addClass("loaded");
+})
 
+
+// toast 
+
+const notifications = document.querySelector(".notifications"),
+    buttons = document.querySelectorAll(".buttons .btn");
+
+const toastDetails = {
+    timer: 5000,
+    invalidemail: {
+        icon: 'fa-circle-info',
+        text: 'Alert! Invalid email address!',
+    },
+    details: {
+        icon: 'fa-circle-info',
+        text: 'Kindly! Fill the required details',
+    },
+    sended:{
+        icon: 'fa-circle-info',
+        text: 'Your Email Sent Successfully!',
+    }
+}
+
+const removeToast = (toast) => {
+    toast.classList.add("hide");
+    if (toast.timeoutId) clearTimeout(toast.timeoutId); // Clearing the timeout for the toast
+    setTimeout(() => toast.remove(), 500); // Removing the toast after 500ms
+}
+
+const createToast = (id) => {
+    // Getting the icon and text for the toast based on the id passed
+    const { icon, text } = toastDetails[id];
+    const toast = document.createElement("li"); // Creating a new 'li' element for the toast
+    toast.className = `toast ${id}`; // Setting the classes for the toast
+    // Setting the inner HTML for the toast
+    toast.innerHTML = `<div class="column">
+                         <i class="fa-solid ${icon}"></i>
+                         <span>${text}</span>
+                      </div>
+                      <i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>`;
+    notifications.appendChild(toast); // Append the toast to the notification ul
+    // Setting a timeout to remove the toast after the specified duration
+    toast.timeoutId = setTimeout(() => removeToast(toast), toastDetails.timer);
+}
+
+
+function codeAddress() {
+    createToast("welcome");
+    setTimeout(() => createToast("info"), 1500);
+}
+
+
+// toast end 
 const nav = document.querySelector(".nav"),
     navList = nav.querySelectorAll("li"),
     totalNavList = navList.length,
@@ -92,28 +144,28 @@ window.addEventListener("scroll", navHighlighter);
 
 function navHighlighter() {
 
-  // Get current scroll position
-  let scrollY = window.pageYOffset;
+    // Get current scroll position
+    let scrollY = window.pageYOffset;
 
-  // Now we loop through sections to get height, top and ID values for each
-  sections.forEach(current => {
-    const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 50;
-    sectionId = current.getAttribute("id");
+    // Now we loop through sections to get height, top and ID values for each
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 50;
+        sectionId = current.getAttribute("id");
 
-    /*
-    - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
-    - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
-    */
-    if (
-      scrollY > sectionTop &&
-      scrollY <= sectionTop + sectionHeight
-    ){
-      document.querySelector(".navigation a[href*=" + sectionId + "]").classList.add("active");
-    } else {
-      document.querySelector(".navigation a[href*=" + sectionId + "]").classList.remove("active");
-    }
-  });
+        /*
+        - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
+        - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
+        */
+        if (
+            scrollY > sectionTop &&
+            scrollY <= sectionTop + sectionHeight
+        ) {
+            document.querySelector(".navigation a[href*=" + sectionId + "]").classList.add("active");
+        } else {
+            document.querySelector(".navigation a[href*=" + sectionId + "]").classList.remove("active");
+        }
+    });
 }
 
 function togglearea() {
@@ -139,18 +191,18 @@ function togglearea2() {
 
 /* Back to top button
    */
-  let backtotop = select('.back-to-top')
-  if (backtotop) {
+let backtotop = select('.back-to-top')
+if (backtotop) {
     const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active')
-      } else {
-        backtotop.classList.remove('active')
-      }
+        if (window.scrollY > 100) {
+            backtotop.classList.add('active')
+        } else {
+            backtotop.classList.remove('active')
+        }
     }
     window.addEventListener('load', toggleBacktotop)
     onscroll(document, toggleBacktotop)
-  }
+}
 
 // ******sending email 
 
@@ -187,13 +239,16 @@ function sendMail() {
     let validRegex = /^([a-zA-Z])([\w-.]*)@([\w]+)([\w-.])*\.(aero|asia|be|biz|com.ar|ca|co|co.in|co.jp|co.kr|co.sg|com|com.ar|com.mx|com.sg|com.ph|co.uk|coop|de|edu|es|fr|gov|in|info|it|jobs|ltd|mil|mobi|museum|name|net|net.mx|org|ru|us)+$/;
 
     if ((document.getElementById('name').value == "") || (document.getElementById('email').value == "") || (document.getElementById('message').value == "")) {
-        alert("Kindly! Fill the required details")
+        // alert("Kindly! Fill the required details")
+        createToast("details");
+
     }
 
     else if (!document.getElementById('email').value.match(validRegex)) {
-        alert("Alert! Invalid email address!");
+        createToast("invalidemail");
+        // alert("Alert! Invalid email address!");
         document.getElementById('email').focus();
-      }
+    }
 
     else {
         var params = {
@@ -205,7 +260,7 @@ function sendMail() {
 
         const servieID = "service_3myjm7y";
         const templateID = "template_b0wznsl";
-
+        
         emailjs
             .send(servieID, templateID, params)
             .then((res) => {
@@ -214,13 +269,15 @@ function sendMail() {
                 document.getElementById('subject').value = "";
                 document.getElementById('message').value = "";
                 console.log(res);
-                alert("Your Messsage Sent Successfully!")
+                // alert("Your Messsage Sent Successfully!")
+                createToast("sended");
+
 
             })
-            .catch((err) => console.log(err));
+            .catch((err) =>  console.log(err));
     }
-
 }
+
 
 
 
