@@ -44,11 +44,11 @@
 
 <body>
 
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="loader">
 
         </div>
-    </div>
+    </div> -->
 
     <!-- main container  -->
     <div class="main-container">
@@ -63,7 +63,7 @@
                 <div class="imgbx">
                     <img src="Images/img8.jpg" alt="">
                 </div>
-                <a href="#"><span>Full Stack </span><br> Developer</a>
+                <a href="#"><span> MERN Stack </span><br> Developer</a>
             </div>
 
             <div class="nav-toggler">
@@ -100,17 +100,15 @@
                     <div class="row">
                         <div class="home-info padd-15">
                             <h3 class="hello">Hello, my name is <span class="name">Asim Shakoor</span> </h3>
-                            <h3 class="my-profession">I'm, a <span class="typing"> Full Stack Web Developer</span></h3>
-                            <p>I'm a versatile web developer with a strong focus on
-creating intuitive user interfaces. Proficient in both
-front-end and back-end technologies, adept at
-leveraging a diverse skill set encompassing HTML/CSS,
-JavaScript frameworks (such as React Js), and serverside
-languages like Node.js and Python. I have the ability
-to build scalable and interactive web applications that
-prioritize performance and user engagement..</p>
+                            <h3 class="my-profession">I'm, a <span class="typing">MERN Web Developer</span></h3>
+                            <p>I'm a versatile MERN stack developer with a strong
+                                focus on creating intuitive user interfaces. My expertise extends to responsive design,
+                                ensuring seamless experiences across various devices and screen sizes. With a deep
+                                understanding of modern frameworks and libraries like React and Angular, I have the
+                                ability to build scalable and interactive web applications that prioritize performance
+                                and user engagement.</p>
                             <a href="Download CV/Resume.pdf" download class="btn" title="Click to download CV"
-                                target="_blank">Downlaod CV</a>
+                                target="_blank" onclick="downlaodcv()">Downlaod CV</a>
                         </div>
                         <div class="home-img padd-15">
                             <img src="Images/img2.png" alt="" data-aos="fade-left" data-aos-duration="800">
@@ -290,16 +288,7 @@ prioritize performance and user engagement..</p>
                                                 <div class="progress-in" style="width: 96%;"></div>
                                                 <div class="skill-percent">96%</div>
                                             </div>
-                                        </div>
-
-                                        <div class="skill-item padd-15" data-aos="fade-up" data-aos-delay="50"
-                                            data-aos-duration="800">
-                                            <h5>Wordpress</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 85%;"></div>
-                                                <div class="skill-percent">85%</div>
-                                            </div>
-                                        </div>
+                                        </div>                                        
 
                                         <div class="skill-item padd-15" data-aos="fade-up" data-aos-duration="800">
                                             <h5>Figma</h5>
@@ -465,22 +454,10 @@ prioritize performance and user engagement..</p>
                         <div class="service-item padd-15">
                             <div class="service-item-inner">
                                 <div class="icon" data-aos="zoom-in" data-aos-delay="150" data-aos-duration="3000">
-                                    <i class="fa fa-solid fa-file-invoice"></i>
-                                </div>
-                                <h4>PSD to Html</h4>
-                                <p>I will convert a PSD design template to responsive website with animations.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- service items -->
-                        <div class="service-item padd-15">
-                            <div class="service-item-inner">
-                                <div class="icon" data-aos="zoom-in" data-aos-delay="150" data-aos-duration="3000">
                                     <i class="fa fa-brands fa-figma"></i>
                                 </div>
-                                <h4>Figma to Html</h4>
-                                <p>I will convert a Figma design template to responsive website using modern
+                                <h4>PSD / Figma to Html</h4>
+                                <p>I will convert a PSD/Figma design template to responsive website using modern
                                     technologies with animations.
                                 </p>
                             </div>
@@ -519,7 +496,7 @@ prioritize performance and user engagement..</p>
                                     <i class="fa fas fa-tshirt"></i>
                                 </div>
                                 <h4>E-Commerce Websites</h4>
-                                <p>I will design, develop E-Commerce Stores, Shopify websites for you, or modify your
+                                <p>I will design, develop E-Commerce websites, Shopify stores for you, or modify your
                                     existing stores.
                                 </p>
                             </div>
@@ -534,19 +511,6 @@ prioritize performance and user engagement..</p>
                                 <h4>Website Modification</h4>
                                 <p>I will update, fix, edit or modify your existing website. color schemes, adding
                                     removing pages and many more.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- service items -->
-                        <div class="service-item padd-15">
-                            <div class="service-item-inner">
-                                <div class="icon" data-aos="zoom-in" data-aos-delay="150" data-aos-duration="3000">
-                                    <i class="fa fas fa-tshirt"></i>
-                                </div>
-                                <h4>Shopify Store</h4>
-                                <p>I will create or customize your shopify store. Adding custom sections, adding
-                                    new pages and many more.
                                 </p>
                             </div>
                         </div>
@@ -575,6 +539,7 @@ prioritize performance and user engagement..</p>
                             <h2>Portfolio</h2>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="portfolio-heading padd-15">
                             <h2>My Last Projects:</h2>
@@ -586,13 +551,70 @@ prioritize performance and user engagement..</p>
                         <div class="portfolio-item padd-15" data-aos="zoom-in" data-aos-duration="800">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
+                                    <a href="https://asimshakoor11.github.io/tailwinddashboard/index.html" title="Click to visit"
+                                        target="_blank">
+                                        <img src="Images/Portfolio/dashboarddd.png" alt="">
+                                    </a>
+
+                                    <div class="overlay">
+                                        <h4>-Dashboard (Tailwind CSS) <br>-- Fiverr Client</h4>
+                                        <a href="https://asimshakoor11.github.io/tailwinddashboard/index.html" title="Click to visit"
+                                            target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- portfolio item end  -->
+
+                         <!-- porfolio item  -->
+                         <div class="portfolio-item padd-15" data-aos="zoom-in" data-aos-duration="800">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://asimshakoor11.github.io/tailwindcards/" title="Click to visit"
+                                        target="_blank">
+                                        <img src="Images/Portfolio/cardsssss.png" alt="">
+                                    </a>
+
+                                    <div class="overlay">
+                                        <h4>Different components <br> of website</h4>
+                                        <a href="https://asimshakoor11.github.io/tailwindcards/" title="Click to visit"
+                                            target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- portfolio item end  -->
+
+                         <!-- porfolio item  -->
+                         <div class="portfolio-item padd-15" data-aos="zoom-in" data-aos-duration="800">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://asimshakoor11.github.io/tailwindtasks/" title="Click to visit"
+                                        target="_blank">
+                                        <img src="Images/Portfolio/tasks.png" alt="">
+                                    </a>
+
+                                    <div class="overlay">
+                                        <h4>-Tasks Mangement Page<br>-- Fully Functional</h4>
+                                        <a href="https://asimshakoor11.github.io/tailwindtasks/" title="Click to visit"
+                                            target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- portfolio item end  -->
+
+                        <!-- porfolio item  -->
+                        <div class="portfolio-item padd-15" data-aos="zoom-in" data-aos-duration="800">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
                                     <a href="https://chat-vibe-sigma.vercel.app/" title="Click to visit"
                                         target="_blank">
                                         <img src="Images/Portfolio/chatapp.png" alt="">
                                     </a>
 
                                     <div class="overlay">
-                                        <h4>Chat-Vibe (React)</h4>
+                                        <h4>Chat-Vibe (MERN) <br>-- Practice</h4>
                                         <a href="https://chat-vibe-sigma.vercel.app/" title="Click to visit"
                                             target="_blank" class="btn btn-visit">Visit</a>
                                     </div>
@@ -611,7 +633,7 @@ prioritize performance and user engagement..</p>
                                     </a>
 
                                     <div class="overlay">
-                                        <h4>Social Website (Client)</h4>
+                                        <h4>Social Website<br>-- Fiverr Client</h4>
                                         <a href="https://asimshakoor11.github.io/social_website/" title="Click to visit"
                                             target="_blank" class="btn btn-visit">Visit</a>
                                     </div>
@@ -630,7 +652,7 @@ prioritize performance and user engagement..</p>
                                     </a>
 
                                     <div class="overlay">
-                                        <h4>Entertainment Website (Client)</h4>
+                                        <h4>Entertainment Website <br>-- Fiverr Client</h4>
                                         <a href="https://asimshakoor11.github.io/entertainment_website/"
                                             title="Click to visit" target="_blank" class="btn btn-visit">Visit</a>
                                     </div>
@@ -649,7 +671,7 @@ prioritize performance and user engagement..</p>
                                     </a>
 
                                     <div class="overlay">
-                                        <h4>Amazon Clone</h4>
+                                        <h4>Amazon Clone <br>-- Practice</h4>
                                         <a href="https://asimshakoor11.github.io/amazon_clone/" title="Click to visit"
                                             target="_blank" class="btn btn-visit">Visit</a>
                                     </div>
@@ -669,7 +691,7 @@ prioritize performance and user engagement..</p>
                                     </a>
 
                                     <div class="overlay">
-                                        <h4>Gymmnastic Website (React)</h4>
+                                        <h4>Gymmnastic Website (React) <br>-- Practice</h4>
                                         <a href="https://asimshakoor11.github.io/reactgymapp/" title="Click to visit"
                                             target="_blank" class="btn btn-visit">Visit</a>
                                     </div>
@@ -682,12 +704,12 @@ prioritize performance and user engagement..</p>
                         <div class="portfolio-item padd-15" data-aos="zoom-in" data-aos-duration="800">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <a href="https://asimshakoor11.github.io/landing_page/" title="Click to visit" target="_blank">
+                                    <a href="http://nailingitontime.ca/" title="Click to visit" target="_blank">
                                         <img src="Images/Portfolio/image12.png" alt="">
                                     </a>
                                     <div class="overlay">
-                                        <h4>Landing Page (Client)</h4>
-                                        <a href="https://asimshakoor11.github.io/landing_page/" title="Click to visit" target="_blank"
+                                        <h4>Landing Page <br> --Fiverr Client</h4>
+                                        <a href="http://nailingitontime.ca/" title="Click to visit" target="_blank"
                                             class="btn btn-visit">Visit</a>
                                     </div>
                                 </div>
@@ -722,7 +744,7 @@ prioritize performance and user engagement..</p>
                                         <img src="Images/Portfolio/image7.png" alt="">
                                     </a>
                                     <div class="overlay">
-                                        <h4>Business Website (Client)</h4>
+                                        <h4>Business Website <br>-- Fiverr Client</h4>
                                         <a href="https://karmawebsitebymuneeb.netlify.app/#" title="Click to visit"
                                             target="_blank" class="btn btn-visit">Visit</a>
                                     </div>
@@ -997,14 +1019,20 @@ prioritize performance and user engagement..</p>
                     </div>
 
                     <div class="row">
-                        <div class="portfolio-heading padd-15" onclick="togglearea2()">
+                        <div class="portfolio-heading padd-15" style="margin-bottom: 20px;">
                             <h2>Achieved Certificates:</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="portfolio-heading padd-15" style="padding-left: 55px;"  onclick="togglearea2()">
+                            <h2>Meta Front-End Developer:</h2>
                             <i class="fas fa-chevron-down" id="arrdown2"></i>
                             <i class="fas fa-chevron-up hidden" id="arrup2"></i>
                         </div>
                     </div>
                     <div class="row hidden" id="display_row2">
 
+                        
                         <!-- Javascript Projects item  -->
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
@@ -1027,107 +1055,13 @@ prioritize performance and user engagement..</p>
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <a href="https://coursera.org/share/005e2cefe5f273042fb9373766f02fea"
-                                        title="Click to visit" target="_blank">
-                                        <img src="Images/Certificates/coding.png" alt="">
-                                    </a>
-                                    <div class="overlay">
-                                        <h4>Interview Preparation</h4>
-                                        <a href="https://coursera.org/share/005e2cefe5f273042fb9373766f02fea"
-                                            title="Click to visit" target="_blank" class="btn btn-visit">Visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Javascript Projects item end  -->
-
-                        <!-- Javascript Projects item  -->
-                        <div class="portfolio-item padd-15">
-                            <div class="portfolio-item-inner shadow-dark">
-                                <div class="portfolio-img">
-                                    <a href="https://www.coursera.org/verify/T6AWMU6XDAYP" title="Click to visit"
+                                    <a href="https://coursera.org/verify/64PXRCMP4DLD" title="Click to visit"
                                         target="_blank">
-                                        <img src="Images/Certificates/ui ux.png" alt="">
+                                        <img src="Images/Certificates/intro front end.png" alt="">
                                     </a>
                                     <div class="overlay">
-                                        <h4>UX/UI Design</h4>
-                                        <a href="https://www.coursera.org/verify/T6AWMU6XDAYP" title="Click to visit"
-                                            target="_blank" class="btn btn-visit">Visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Javascript Projects item end  -->
-
-
-                        <!-- Javascript Projects item  -->
-                        <div class="portfolio-item padd-15">
-                            <div class="portfolio-item-inner shadow-dark">
-                                <div class="portfolio-img">
-                                    <a href="https://www.coursera.org/verify/DTRB4G2J42UY" title="Click to visit"
-                                        target="_blank">
-                                        <img src="Images/Certificates/advance react.png" alt="">
-                                    </a>
-                                    <div class="overlay">
-                                        <h4>Advance React</h4>
-                                        <a href="https://www.coursera.org/verify/DTRB4G2J42UY" title="Click to visit"
-                                            target="_blank" class="btn btn-visit">Visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Javascript Projects item end  -->
-
-
-                        <!-- Javascript Projects item  -->
-                        <div class="portfolio-item padd-15">
-                            <div class="portfolio-item-inner shadow-dark">
-                                <div class="portfolio-img">
-                                    <a href="https://coursera.org/verify/2E4DFBX2EFNG" title="Click to visit"
-                                        target="_blank">
-                                        <img src="Images/Certificates/react basics.png" alt="">
-                                    </a>
-                                    <div class="overlay">
-                                        <h4>React Basics</h4>
-                                        <a href="https://coursera.org/verify/2E4DFBX2EFNG" title="Click to visit"
-                                            target="_blank" class="btn btn-visit">Visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Javascript Projects item end  -->
-
-
-
-                        <!-- Javascript Projects item  -->
-                        <div class="portfolio-item padd-15">
-                            <div class="portfolio-item-inner shadow-dark">
-                                <div class="portfolio-img">
-                                    <a href="https://coursera.org/verify/MXHPK2QHHLND" title="Click to visit"
-                                        target="_blank">
-                                        <img src="Images/Certificates/version control.png" alt="">
-                                    </a>
-                                    <div class="overlay">
-                                        <h4>Version Control (Git)</h4>
-                                        <a href="https://coursera.org/verify/MXHPK2QHHLND" title="Click to visit"
-                                            target="_blank" class="btn btn-visit">Visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Javascript Projects item end  -->
-
-                        <!-- Javascript Projects item  -->
-                        <div class="portfolio-item padd-15">
-                            <div class="portfolio-item-inner shadow-dark">
-                                <div class="portfolio-img">
-                                    <a href="https://coursera.org/verify/C2WMRM2GXGKZ" title="Click to visit"
-                                        target="_blank">
-                                        <img src="Images/Certificates/javascript.png" alt="">
-                                    </a>
-                                    <div class="overlay">
-                                        <h4>Javascript</h4>
-                                        <a href="https://coursera.org/verify/C2WMRM2GXGKZ" title="Click to visit"
+                                        <h4>Intro Fron-End</h4>
+                                        <a href="https://coursera.org/verify/64PXRCMP4DLD" title="Click to visit"
                                             target="_blank" class="btn btn-visit">Visit</a>
                                     </div>
                                 </div>
@@ -1158,13 +1092,301 @@ prioritize performance and user engagement..</p>
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <a href="https://coursera.org/verify/64PXRCMP4DLD" title="Click to visit"
+                                    <a href="https://coursera.org/verify/C2WMRM2GXGKZ" title="Click to visit"
                                         target="_blank">
-                                        <img src="Images/Certificates/intro front end.png" alt="">
+                                        <img src="Images/Certificates/javascript.png" alt="">
                                     </a>
                                     <div class="overlay">
-                                        <h4>Intro Fron-End</h4>
-                                        <a href="https://coursera.org/verify/64PXRCMP4DLD" title="Click to visit"
+                                        <h4>Javascript</h4>
+                                        <a href="https://coursera.org/verify/C2WMRM2GXGKZ" title="Click to visit"
+                                            target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Javascript Projects item end  -->
+
+                         <!-- Javascript Projects item  -->
+                         <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://coursera.org/verify/MXHPK2QHHLND" title="Click to visit"
+                                        target="_blank">
+                                        <img src="Images/Certificates/version control.png" alt="">
+                                    </a>
+                                    <div class="overlay">
+                                        <h4>Version Control (Git)</h4>
+                                        <a href="https://coursera.org/verify/MXHPK2QHHLND" title="Click to visit"
+                                            target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Javascript Projects item end  -->                        
+
+                        <!-- Javascript Projects item  -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://coursera.org/verify/2E4DFBX2EFNG" title="Click to visit"
+                                        target="_blank">
+                                        <img src="Images/Certificates/react basics.png" alt="">
+                                    </a>
+                                    <div class="overlay">
+                                        <h4>React Basics</h4>
+                                        <a href="https://coursera.org/verify/2E4DFBX2EFNG" title="Click to visit"
+                                            target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Javascript Projects item end  -->
+
+                       
+
+                        <!-- Javascript Projects item  -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://www.coursera.org/verify/DTRB4G2J42UY" title="Click to visit"
+                                        target="_blank">
+                                        <img src="Images/Certificates/advance react.png" alt="">
+                                    </a>
+                                    <div class="overlay">
+                                        <h4>Advance React</h4>
+                                        <a href="https://www.coursera.org/verify/DTRB4G2J42UY" title="Click to visit"
+                                            target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Javascript Projects item end  -->
+                        
+
+                        <!-- Javascript Projects item  -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://www.coursera.org/verify/T6AWMU6XDAYP" title="Click to visit"
+                                        target="_blank">
+                                        <img src="Images/Certificates/ui ux.png" alt="">
+                                    </a>
+                                    <div class="overlay">
+                                        <h4>UX/UI Design</h4>
+                                        <a href="https://www.coursera.org/verify/T6AWMU6XDAYP" title="Click to visit"
+                                            target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Javascript Projects item end  -->
+
+
+                        <!-- Javascript Projects item  -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://coursera.org/verify/8EZDQ77PQCR2"
+                                        title="Click to visit" target="_blank">
+                                        <img src="Images/Certificates/Front End Capstone.jpg" alt="">
+                                    </a>
+                                    <div class="overlay">
+                                        <h4>Front End Capstone</h4>
+                                        <a href="https://coursera.org/verify/8EZDQ77PQCR2"
+                                            title="Click to visit" target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Javascript Projects item end  -->
+                        
+
+                        <!-- Javascript Projects item  -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://coursera.org/share/005e2cefe5f273042fb9373766f02fea"
+                                        title="Click to visit" target="_blank">
+                                        <img src="Images/Certificates/coding.png" alt="">
+                                    </a>
+                                    <div class="overlay">
+                                        <h4>Interview Preparation</h4>
+                                        <a href="https://coursera.org/share/005e2cefe5f273042fb9373766f02fea"
+                                            title="Click to visit" target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Javascript Projects item end  -->
+
+                    </div>
+                    <!-- meta backend  -->
+                    <div class="row">
+                        <div class="portfolio-heading padd-15" style="padding-left: 55px;"  onclick="togglearea3()">
+                            <h2>Meta Back-End Developer:</h2>
+                            <i class="fas fa-chevron-down" id="arrdown3"></i>
+                            <i class="fas fa-chevron-up hidden" id="arrup3"></i>
+                        </div>
+                    </div>
+                    <div class="row hidden" id="display_row3">
+
+                        <!-- Javascript Projects item  -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://www.coursera.org/account/accomplishments/professional-cert/468UEAJDH8YF"
+                                        title="Click to visit" target="_blank">
+                                        <img src="Images/Certificates/backend spec.jpg" alt="">
+                                    </a>
+                                    <div class="overlay">
+                                        <h4>Back End Specilization</h4>
+                                        <a href="https://www.coursera.org/account/accomplishments/professional-cert/468UEAJDH8YF"
+                                            title="Click to visit" target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Javascript Projects item end  -->
+
+                        <!-- Javascript Projects item  -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://www.coursera.org/account/accomplishments/verify/FPNP8KAS26RY"
+                                        title="Click to visit" target="_blank">
+                                        <img src="Images/Certificates/backend intro.jpg" alt="">
+                                    </a>
+                                    <div class="overlay">
+                                        <h4>Intro Back-End</h4>
+                                        <a href="https://www.coursera.org/account/accomplishments/verify/FPNP8KAS26RY"
+                                            title="Click to visit" target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Javascript Projects item end  -->
+
+                        <!-- Javascript Projects item  -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://www.coursera.org/account/accomplishments/verify/2AH9L6EJN536" title="Click to visit"
+                                        target="_blank">
+                                        <img src="Images/Certificates/backend python.jpg" alt="">
+                                    </a>
+                                    <div class="overlay">
+                                        <h4>Python Programming</h4>
+                                        <a href="https://www.coursera.org/account/accomplishments/verify/2AH9L6EJN536" title="Click to visit"
+                                            target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Javascript Projects item end  -->
+
+
+                        <!-- Javascript Projects item  -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://www.coursera.org/account/accomplishments/verify/MXHPK2QHHLND" title="Click to visit"
+                                        target="_blank">
+                                        <img src="Images/Certificates/version control.png" alt="">
+                                    </a>
+                                    <div class="overlay">
+                                        <h4>Version Control (Git)</h4>
+                                        <a href="https://www.coursera.org/account/accomplishments/verify/MXHPK2QHHLND" title="Click to visit"
+                                            target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Javascript Projects item end  -->
+
+
+                        <!-- Javascript Projects item  -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://www.coursera.org/account/accomplishments/verify/2UME55QPTFAS" title="Click to visit"
+                                        target="_blank">
+                                        <img src="Images/Certificates/backend database.jpg" alt="">
+                                    </a>
+                                    <div class="overlay">
+                                        <h4>Database (SQL)</h4>
+                                        <a href="https://www.coursera.org/account/accomplishments/verify/2UME55QPTFAS" title="Click to visit"
+                                            target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Javascript Projects item end  -->
+
+                        <!-- Javascript Projects item  -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://www.coursera.org/account/accomplishments/verify/C7HG54A3D7DU" title="Click to visit"
+                                        target="_blank">
+                                        <img src="Images/Certificates/backend django.jpg" alt="">
+                                    </a>
+                                    <div class="overlay">
+                                        <h4>Django Framework</h4>
+                                        <a href="https://www.coursera.org/account/accomplishments/verify/C7HG54A3D7DU" title="Click to visit"
+                                            target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Javascript Projects item end  -->
+
+                        <!-- Javascript Projects item  -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://www.coursera.org/account/accomplishments/verify/F6HSYQVYK9ED" title="Click to visit"
+                                        target="_blank">
+                                        <img src="Images/Certificates/Backend api.jpg" alt="">
+                                    </a>
+                                    <div class="overlay">
+                                        <h4>API</h4>
+                                        <a href="https://www.coursera.org/account/accomplishments/verify/F6HSYQVYK9ED" title="Click to visit"
+                                            target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Javascript Projects item end  -->
+
+                        <!-- Javascript Projects item  -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://www.coursera.org/account/accomplishments/verify/DFU6EQJ7BRF8" title="Click to visit"
+                                        target="_blank">
+                                        <img src="Images/Certificates/backend fullstack.jpg" alt="">
+                                    </a>
+                                    <div class="overlay">
+                                        <h4>The Full Stack</h4>
+                                        <a href="https://www.coursera.org/account/accomplishments/verify/DFU6EQJ7BRF8" title="Click to visit"
+                                            target="_blank" class="btn btn-visit">Visit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Javascript Projects item end  -->
+
+                        <!-- Javascript Projects item  -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://www.coursera.org/account/accomplishments/verify/393WTYN7F6VW" title="Click to visit"
+                                        target="_blank">
+                                        <img src="Images/Certificates/Back-End Developer Capstone.jpg" alt="">
+                                    </a>
+                                    <div class="overlay">
+                                        <h4>Back-End Capstone</h4>
+                                        <a href="https://www.coursera.org/account/accomplishments/verify/393WTYN7F6VW" title="Click to visit"
                                             target="_blank" class="btn btn-visit">Visit</a>
                                     </div>
                                 </div>
@@ -1173,6 +1395,8 @@ prioritize performance and user engagement..</p>
                         <!-- Javascript Projects item end  -->
 
                     </div>
+                    <!-- meta backend  -->
+
                 </div>
             </section>
 
@@ -1387,27 +1611,34 @@ prioritize performance and user engagement..</p>
             </a>
 
         </div>
-
     </div>
+
+    <div class="style-switcher">
+        <div class="day-night s-icon">
+            <i class="fas " id="themesvg"></i>
+        </div>
+    </div>
+
+
+    <!-- AOS animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 120, 
+            easing: 'ease-in-out',
+        });
+
+    </script>
+
+    <!-- typed jsquery cdn  -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="Javascript/jquery.min.js"></script>
 
     <!-- javascript linkage  -->
     <script src="Javascript/script.js"></script>
 
-    <!-- sending mail 
-    <script src="https://smtpjs.com/v3/smtp.js">
-    </script> -->
-
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            offset: 120,
-            easing: 'ease-in-out',
-        });
-
-    </script>
 </body>
 
 </html>
