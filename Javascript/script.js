@@ -1,10 +1,55 @@
 
 
+// typing animation 
+var typed = new Typed(".typing",{
+    strings:["","MERN Stack Developer", "Fron-End Developer", "React Js Developer", "Web Designer"],
+    typeSpeed: 90,
+    backSpeed: 40,
+    loop: true
+})
+
+// theme switcher
+
+
+const dayNight = document.querySelector(".day-night");
+dayNight.addEventListener("click", ()=>{
+    dayNight.querySelector("i").classList.toggle("fa-sun");
+    dayNight.querySelector("i").classList.toggle("fa-moon");
+    document.body.classList.toggle("dark");
+    if(document.getElementById("themesvg").classList.contains("fa-moon")){
+        localStorage.theme = 'light'
+    }else{
+        localStorage.theme = 'dark'
+    }
+})
+
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.body.classList.add("dark");
+    dayNight.querySelector("i").classList.add("fa-sun");
+    dayNight.querySelector("i").classList.remove("fa-moon");
+} else {    
+    document.body.classList.remove("dark");       
+    dayNight.querySelector("i").classList.remove("fa-sun");
+    dayNight.querySelector("i").classList.add("fa-moon");
+}
+// window.addEventListener("load", ()=>{
+//     if(document.body.classList.contains("dark")){
+//         dayNight.querySelector("i").classList.add("fa-sun");
+//     }
+//     else{
+//         dayNight.querySelector("i").classList.add("fa-moon");
+//     }
+// })
+
+// theme switcher
+
+
+
 // aside
 
-$(window).on("load", function(){
-    $(".preloader").addClass("loaded");
-})
+// $(window).on("load", function(){
+//     $(".preloader").addClass("loaded"); 
+// })
 
 
 // toast 
@@ -25,6 +70,10 @@ const toastDetails = {
     sended:{
         icon: 'fa-circle-info',
         text: 'Your Email Sent Successfully!',
+    },
+    cvdownlaod:{
+        icon: 'fa-circle-info',
+        text: 'CV is downloading..!',
     }
 }
 
@@ -181,11 +230,21 @@ function togglearea() {
 function togglearea2() {
     let arrdown = document.getElementById("arrdown2");
     let arrup = document.getElementById("arrup2");
-    let displayrow = document.getElementById("display_row2");
+    let displayrow2 = document.getElementById("display_row2");
 
     arrdown.classList.toggle('hidden');
     arrup.classList.toggle('hidden');
-    displayrow.classList.toggle('hidden');
+    displayrow2.classList.toggle('hidden');
+}
+
+function togglearea3() {
+    let arrdown = document.getElementById("arrdown3");
+    let arrup = document.getElementById("arrup3");
+    let displayrow3 = document.getElementById("display_row3");
+
+    arrdown.classList.toggle('hidden');
+    arrup.classList.toggle('hidden');
+    displayrow3.classList.toggle('hidden');
 }
 
 
@@ -203,34 +262,6 @@ if (backtotop) {
     window.addEventListener('load', toggleBacktotop)
     onscroll(document, toggleBacktotop)
 }
-
-// ******sending email 
-
-// var btn = document.getElementById('btnlast');
-// btn.addEventListener('click', function(e){
-// e.preventDefault()
-// var name = document.getElementById('Name').value;
-// var email = document.getElementById('Email').value;
-// var subject = document.getElementById('Subject').value;
-// var message = document.getElementById('Message').value;
-// var body = 'Name: ' +name + '<br/> Email: ' +email + '<br/> Subject: ' +subject + '<br/> Message: ' +message  
-
-
-// function sendmail() {
-//         Email.send({
-//             Host : "smtp.elasticemail.com",
-//             Username : "asimshakoor920830@gmail.com",
-//             Password : "110B1A590D9E27E712E6725469D33DF903F6",
-//             To : "asimshakoor920830@gmail.com",
-//             From : document.getElementById("email").value,
-//             Subject : document.getElementById("subject").value,
-//             Body : document.getElementById("message").value
-//         }).then(
-//           message => alert("Thanks! Mail Sent Successfully")
-//         );
-// }
-
-// // })
 
 // ******sending email 
 
@@ -277,6 +308,18 @@ function sendMail() {
             .catch((err) =>  console.log(err));
     }
 }
+
+// let downloadcv = document.getElementById("downloadcv");
+// downloadcv.addEventListener("click", ()=>{
+//     console.log("clicked")
+// })
+
+function downlaodcv(){
+    console.log("clicked")
+    createToast("cvdownlaod");
+
+}
+
 
 
 
