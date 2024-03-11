@@ -14,6 +14,14 @@
     --info: #3498db;
 }
 
+body.dark {
+    --bg-black-900: #151515;
+    --bg-black-100: #222222;
+    --bg-black-50: #393939;
+    --text-black-900: #ffffff;
+    --text-black-700: #e9e9e9;
+}
+
 body {
     line-height: 1.5;
     font-size: 16px;
@@ -28,7 +36,7 @@ body {
   background: var(--dark);
 } */
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -77,7 +85,7 @@ ul {
     }
 }
 
-.preloader{
+.preloader {
     position: fixed;
     left: 0;
     top: 0;
@@ -90,14 +98,15 @@ ul {
     justify-content: center;
     transition: all 0.6s ease;
 }
-.preloader.loaded{
+
+.preloader.loaded {
     visibility: hidden;
     display: none;
     opacity: 0;
     z-index: -99;
 }
 
-.preloader .loader{
+.preloader .loader {
     height: 30px;
     width: 30px;
     border: 2px solid #1acc8d;
@@ -106,7 +115,7 @@ ul {
     animation: ani01 2s linear infinite;
 }
 
-.active{
+.active {
     color: var(--skin-color);
 }
 
@@ -240,6 +249,7 @@ ul {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 
+
 /* aside  */
 .aside {
     width: 270px;
@@ -370,7 +380,7 @@ ul {
 }
 
 .aside .nav {
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 .aside .nav li {
@@ -416,7 +426,7 @@ ul {
     max-width: 60%;
 }
 
-.home .home-info p{
+.home .home-info p {
     text-align: justify;
     font-size: 16px;
 }
@@ -739,28 +749,54 @@ h3.my-profession {
 .portfolio .portfolio-heading {
     flex: 0 0 100%;
     max-width: 100%;
-    margin-bottom: 40px;
     display: flex;
     flex-direction: row;
     align-items: center;
     cursor: pointer;
+    margin-bottom: 40px;
+
 }
+
 
 .portfolio .portfolio-heading h2 {
     color: var(--text-black-900);
     font-weight: 500;
     width: fit-content;
-
+    position: relative;
 }
 
-.portfolio .portfolio-heading i{
+
+.portfolio .portfolio-heading h2::before {
+    content: '';
+    height: 4px;
+    width: 35px;
+    background-color: var(--skin-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.portfolio .portfolio-heading h2::after {
+    content: '';
+    height: 4px;
+    width: 17px;
+    background-color: var(--skin-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 8px;
+}
+
+
+
+.portfolio .portfolio-heading i {
     font-size: 20px;
     margin-left: 1%;
     color: var(--text-black-700);
     margin-top: 3px;
 }
 
-.portfolio .portfolio-heading i.hidden{
+.portfolio .portfolio-heading i.hidden {
     display: none;
 }
 
@@ -835,6 +871,7 @@ h3.my-profession {
 
 .portfolio .portfolio-item-inner .portfolio-img .overlay:hover h4 {
     transform: translateX(0);
+    text-align: center;
 }
 
 /* CONTACT  */
@@ -965,30 +1002,67 @@ h3.my-profession {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .back-to-top i {
+}
+
+.back-to-top i {
     font-size: 24px;
     color: #fff;
     line-height: 0;
-  }
-  
-  .back-to-top:hover {
+}
+
+.back-to-top:hover {
     background: #2be4a2;
     color: #fff;
-  }
-  
-  .back-to-top.active {
+}
+
+.back-to-top.active {
     visibility: visible;
     opacity: 1;
-  }
+}
+
+
+/* theme switcher */
+
+.style-switcher {
+    position: fixed;
+    right: 0;
+    top: 6%;
+    padding: 15px;
+    z-index: 101;
+}
+
+.style-switcher .s-icon {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 20px;
+    background: var(--bg-black-100);
+    color: var(--text-black-900);
+    right: 100%;
+    border: 1px solid var(--bg-black-50);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.style-switcher .s-icon i {
+    line-height: 40px;
+}
+
+.style-switcher .day-night {
+    /* top: 55px; */
+}
+
+
+
 
 @media (max-width: 1199px) {
     .section .container {
         padding-top: 70px;
     }
 
-    .section{
+    .section {
         padding: 0 30px;
     }
 
@@ -1053,7 +1127,7 @@ h3.my-profession {
     .aside .logo a span {
         /* margin-left: -34px; */
         font-size: 20px;
-        
+
     }
 
     .aside .logo a span {
@@ -1066,8 +1140,7 @@ h3.my-profession {
     }
 
     .aside .nav {
-        margin-top: 250px;
-
+        margin-top: 180px;
     }
 
     .portfolio .portfolio-item {
@@ -1093,6 +1166,10 @@ h3.my-profession {
     .section.open {
         left: 0;
     }
+
+    .style-switcher {
+        top: 9%;
+    }
 }
 
 @media (max-width: 767px) {
@@ -1117,7 +1194,7 @@ h3.my-profession {
 
 @media (max-height: 560px) {
 
-    .portfolio .portfolio-item-inner .portfolio-img .overlay{
+    .portfolio .portfolio-item-inner .portfolio-img .overlay {
         display: none !important;
         visibility: hidden;
     }
@@ -1127,15 +1204,14 @@ h3.my-profession {
     }
 
     .portfolio .portfolio-item-inner .portfolio-img:hover .overlay {
-    display: none !important;
+        display: none !important;
         visibility: hidden;
-}
+    }
 
     .aside .nav {
-        margin-top: 260px;
-    
+        margin-top: 180px;
     }
-    
+
     .aside .nav li {
         margin-bottom: 10px;
         display: block;
@@ -1145,8 +1221,12 @@ h3.my-profession {
 
 @media (max-width: 390px) {
 
-    .section{
+    .section {
         padding: 0 15px;
+    }
+
+    .aside .nav-toggler.open {
+        left: 280px;
     }
 
     .padd-15 {
@@ -1154,22 +1234,24 @@ h3.my-profession {
         padding-right: 15px;
     }
 
-    .portfolio .portfolio-item-inner .portfolio-img .overlay{
+    .portfolio .portfolio-item-inner .portfolio-img .overlay {
         display: none !important;
         visibility: hidden;
     }
 
     .portfolio .portfolio-item-inner .portfolio-img:hover img {
         filter: grayscale(0);
-    }    
+    }
+
     .portfolio .portfolio-item-inner .portfolio-img:hover .overlay {
-    display: none !important;
+        display: none !important;
         visibility: hidden;
-}
-    
+    }
+
     .aside .logo .imgbx {
         /* margin-left: -8px; */
     }
+
     .aside .logo a span {
         /* margin-left: -28px; */
     }
@@ -1182,12 +1264,14 @@ h3.my-profession {
     right: 20px;
     font-family: "Poppins", sans-serif;
     z-index: 9999;
-  }
-  .notifications :where(.toast, .column) {
+}
+
+.notifications :where(.toast, .column) {
     display: flex;
     align-items: center;
-  }
-  .notifications .toast {
+}
+
+.notifications .toast {
     width: 400px;
     position: relative;
     overflow: hidden;
@@ -1198,39 +1282,49 @@ h3.my-profession {
     background: var(--light);
     justify-content: space-between;
     animation: show_toast 0.3s ease forwards;
-  }
-  @keyframes show_toast {
+}
+
+@keyframes show_toast {
     0% {
-      transform: translateX(100%);
+        transform: translateX(100%);
     }
+
     40% {
-      transform: translateX(-5%);
+        transform: translateX(-5%);
     }
+
     80% {
-      transform: translateX(0%);
+        transform: translateX(0%);
     }
+
     100% {
-      transform: translateX(-10px);
+        transform: translateX(-10px);
     }
-  }
-  .notifications .toast.hide {
+}
+
+.notifications .toast.hide {
     animation: hide_toast 0.3s ease forwards;
-  }
-  @keyframes hide_toast {
+}
+
+@keyframes hide_toast {
     0% {
-      transform: translateX(-10px);
+        transform: translateX(-10px);
     }
+
     40% {
-      transform: translateX(0%);
+        transform: translateX(0%);
     }
+
     80% {
-      transform: translateX(-5%);
+        transform: translateX(-5%);
     }
+
     100% {
-      transform: translateX(calc(100% + 20px));
+        transform: translateX(calc(100% + 20px));
     }
-  }
-  .toast::before {
+}
+
+.toast::before {
     position: absolute;
     content: "";
     height: 3px;
@@ -1238,48 +1332,69 @@ h3.my-profession {
     bottom: 0px;
     left: 0px;
     animation: progress 5s linear forwards;
-  }
-  @keyframes progress {
+}
+
+@keyframes progress {
     100% {
-      width: 0%;
+        width: 0%;
     }
-  }
-  .toast.sended::before,
-  .btn#sended {
+}
+
+.toast.sended::before,
+.btn#sended {
     background: var(--welcome);
-  }
-  .toast.details::before,
-  .btn#details {
+}
+
+.toast.cvdownlaod::before,
+.btn#sended {
+    background: var(--welcome);
+}
+
+.toast.details::before,
+.btn#details {
     background: var(--error);
-  }
-  .toast.invalidemail::before,
-  .btn#invalidemail {
+}
+
+.toast.invalidemail::before,
+.btn#invalidemail {
     background: var(--info);
-  }
-  .toast .column i {
+}
+
+.toast .column i {
     font-size: 1.75rem;
-  }
-  .toast.sended .column i{
+}
+
+.toast.sended .column i {
     color: var(--welcome);
-  }
-  .toast.invalidemail .column i {
+}
+
+.toast.cvdownlaod .column i {
+    color: var(--welcome);
+}
+
+.toast.invalidemail .column i {
     color: var(--info);
-  }
-  .toast.details .column i {
+}
+
+.toast.details .column i {
     color: var(--error);
-  }
-  .toast .column span {
+}
+
+.toast .column span {
     font-size: 1.07rem;
     margin-left: 12px;
-  }
-  .toast i:last-child {
+}
+
+.toast i:last-child {
     color: #aeb0d7;
     cursor: pointer;
-  }
-  .toast i:last-child:hover {
+}
+
+.toast i:last-child:hover {
     color: var(--dark);
-  }
-  .buttons .btn {
+}
+
+.buttons .btn {
     border: none;
     outline: none;
     cursor: pointer;
@@ -1288,81 +1403,85 @@ h3.my-profession {
     font-size: 1.2rem;
     padding: 10px 20px;
     border-radius: 4px;
-  }
-  
-  @media screen and (max-width: 530px) {
+}
+
+@media screen and (max-width: 530px) {
     .notifications {
-      width: 95%;
+        width: 90%;
+        top: 70px;
     }
+    
+
     .notifications .toast {
-      width: 100%;
-      font-size: 1rem;
-      margin-left: 20px;
+        width: 100%;
+        font-size: 1rem;
+        margin-left: 20px;
     }
+
     .buttons .btn {
-      margin: 0 1px;
-      font-size: 1.1rem;
-      padding: 8px 15px;
+        margin: 0 1px;
+        font-size: 1.1rem;
+        padding: 8px 15px;
     }
-  }
-  /* toast code */
-  
-  .screen{
+}
+
+/* toast code */
+
+.screen {
     display: none;
-  }
-  
-  @media screen and (max-width: 900px) {
+}
+
+@media screen and (max-width: 900px) {
     .screen {
-      background-color: #34a2fa;
-      position: fixed;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      z-index: 999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+        background-color: #34a2fa;
+        position: fixed;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-  
+
     .screen div {
-      padding: 20px;
-      border: 1px solid white;
-      border-radius: 10px;
+        padding: 20px;
+        border: 1px solid white;
+        border-radius: 10px;
     }
-  
-    .screen div > :nth-child(1) {
-      color: white;
-      font-size: 15px;
-      font-weight: 900px;
-      margin: 5px;
-      text-align: center;
+
+    .screen div> :nth-child(1) {
+        color: white;
+        font-size: 15px;
+        font-weight: 900px;
+        margin: 5px;
+        text-align: center;
     }
-  
-    .screen div > :nth-child(2) {
-      color: white;
-      font-size: 13px;
-      font-weight: 500px;
-      margin: 5px;
-      text-align: center;
+
+    .screen div> :nth-child(2) {
+        color: white;
+        font-size: 13px;
+        font-weight: 500px;
+        margin: 5px;
+        text-align: center;
     }
-  
-    .screen div > :nth-child(3) {
-      color: white;
-      font-size: 12px;
-      font-weight: 400px;
-      margin: 5px;
-      margin-bottom: 20px;
-      text-align: center;
-      font-style: italic;
-      text-decoration: underline;
+
+    .screen div> :nth-child(3) {
+        color: white;
+        font-size: 12px;
+        font-weight: 400px;
+        margin: 5px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-style: italic;
+        text-decoration: underline;
     }
-  
-    .screen div > :nth-child(4) {
-      color: white;
-      font-size: 12px;
-      font-weight: 400px;
-      margin: 5px;
-      text-align: center;
+
+    .screen div> :nth-child(4) {
+        color: white;
+        font-size: 12px;
+        font-weight: 400px;
+        margin: 5px;
+        text-align: center;
     }
-  }
-  
+}
