@@ -1,8 +1,8 @@
 
 
 // typing animation 
-var typed = new Typed(".typing",{
-    strings:["","MERN Stack Developer", "Fron-End Developer", "React Js Developer", "Web Designer"],
+var typed = new Typed(".typing", {
+    strings: ["", "MERN Stack Developer", "Fron-End Developer", "React Js Developer", "Web Designer"],
     typeSpeed: 90,
     backSpeed: 40,
     loop: true
@@ -12,13 +12,13 @@ var typed = new Typed(".typing",{
 
 
 const dayNight = document.querySelector(".day-night");
-dayNight.addEventListener("click", ()=>{
+dayNight.addEventListener("click", () => {
     dayNight.querySelector("i").classList.toggle("fa-sun");
     dayNight.querySelector("i").classList.toggle("fa-moon");
     document.body.classList.toggle("dark");
-    if(document.getElementById("themesvg").classList.contains("fa-moon")){
+    if (document.getElementById("themesvg").classList.contains("fa-moon")) {
         localStorage.theme = 'light'
-    }else{
+    } else {
         localStorage.theme = 'dark'
     }
 })
@@ -27,8 +27,8 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
     document.body.classList.add("dark");
     dayNight.querySelector("i").classList.add("fa-sun");
     dayNight.querySelector("i").classList.remove("fa-moon");
-} else {    
-    document.body.classList.remove("dark");       
+} else {
+    document.body.classList.remove("dark");
     dayNight.querySelector("i").classList.remove("fa-sun");
     dayNight.querySelector("i").classList.add("fa-moon");
 }
@@ -67,11 +67,11 @@ const toastDetails = {
         icon: 'fa-circle-info',
         text: 'Kindly! Fill the required details',
     },
-    sended:{
+    sended: {
         icon: 'fa-circle-info',
         text: 'Your Email Sent Successfully!',
     },
-    cvdownlaod:{
+    cvdownlaod: {
         icon: 'fa-circle-info',
         text: 'CV is downloading..!',
     }
@@ -250,8 +250,11 @@ function togglearea3() {
 
 /* Back to top button
    */
-let backtotop = select('.back-to-top')
-if (backtotop) {
+// let backtotop = select('.back-to-top')
+// if (backtotop) {
+
+$(".back-to-top").click(function () {
+
     const toggleBacktotop = () => {
         if (window.scrollY > 100) {
             backtotop.classList.add('active')
@@ -260,11 +263,10 @@ if (backtotop) {
         }
     }
     window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
-}
+    // onscroll(document, toggleBacktotop)
+})
 
 // ******sending email 
-
 
 function sendMail() {
     let validRegex = /^([a-zA-Z])([\w-.]*)@([\w]+)([\w-.])*\.(aero|asia|be|biz|com.ar|ca|co|co.in|co.jp|co.kr|co.sg|com|com.ar|com.mx|com.sg|com.ph|co.uk|coop|de|edu|es|fr|gov|in|info|it|jobs|ltd|mil|mobi|museum|name|net|net.mx|org|ru|us)+$/;
@@ -291,7 +293,7 @@ function sendMail() {
 
         const servieID = "service_3myjm7y";
         const templateID = "template_b0wznsl";
-        
+
         emailjs
             .send(servieID, templateID, params)
             .then((res) => {
@@ -305,7 +307,7 @@ function sendMail() {
 
 
             })
-            .catch((err) =>  console.log(err));
+            .catch((err) => console.log(err));
     }
 }
 
@@ -314,10 +316,77 @@ function sendMail() {
 //     console.log("clicked")
 // })
 
-function downlaodcv(){
+function downlaodcv() {
     console.log("clicked")
     createToast("cvdownlaod");
+}
 
+let index = 0;
+const totalWorkItems = $(".work-item").length;
+let widthhh;
+let newHeight;
+let adjustedHeight;
+
+$(document).ready(function () {
+
+    // set lightbox img max height 
+    const wHeight = $(window).height();
+    newHeight = wHeight * 0.25; // 50% of wHeight
+    adjustedHeight = wHeight - newHeight; // 50% less than wHeight
+    $(".lightbox-img").css("max-height", adjustedHeight + "px");
+    //lightbox
+    $(".btn-detailss").click(function () {
+        // index = ($(this).parent(".work-item").index());
+        index = ($(this).parent().parent().parent().parent().parent().index());
+        $(".lightbox").addClass("open")
+        lightboxSlideShow();
+    })
+
+    $(".lightbox .prev").click(function () {
+        if (index == 0) {
+            index = totalWorkItems - 1;
+        }
+        else {
+            index--;
+        }
+        lightboxSlideShow();
+    })
+
+    $(".lightbox .next").click(function () {
+        if (index == totalWorkItems - 1) {
+            index = 0;
+        }
+        else {
+            index++;
+        }
+        lightboxSlideShow();
+    })
+
+    $(".lightbox-close").click(function () {
+        $(".lightbox").removeClass("open");
+    })
+
+    $(".lightbox").click(function (event) {
+        if ($(event.target).hasClass("lightbox")) {
+            $(this).removeClass("open");
+        }
+    })
+})
+
+function lightboxSlideShow() {
+    const imgSrc = $(".work-item").eq(index).find("img").attr("data-large");
+    const category = $(".work-item").eq(index).find("h4").html();
+    const des = $(".work-item").eq(index).find("p").html();
+    const link = $(".work-item").eq(index).find("a").attr("href");
+
+    $(".lightbox-img").attr("src", imgSrc);
+    $(".lightbox-category").html(category);
+    $(".lightbox-des").html(des);
+    $(".lightbox-link").attr("href", link);
+    $(".lightbox-counter").html((index + 1) + "/" + totalWorkItems );
+    widthhh = $(".lightbox-img").width()
+    $(".lightbox-des").css("max-width", widthhh + "px");
+    console.log(widthhh)
 }
 
 
