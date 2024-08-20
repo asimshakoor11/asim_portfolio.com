@@ -317,7 +317,6 @@ function sendMail() {
 // })
 
 function downlaodcv() {
-    console.log("clicked")
     createToast("cvdownlaod");
 }
 
@@ -339,6 +338,8 @@ $(document).ready(function () {
         // index = ($(this).parent(".work-item").index());
         index = ($(this).parent().parent().parent().parent().parent().index());
         $(".lightbox").addClass("open")
+        // Disable scroll on body
+        $("body").css("overflow", "hidden");
         lightboxSlideShow();
     })
 
@@ -363,11 +364,14 @@ $(document).ready(function () {
     })
 
     $(".lightbox-close").click(function () {
+        $("body").css("overflow", "auto");
         $(".lightbox").removeClass("open");
     })
 
     $(".lightbox").click(function (event) {
         if ($(event.target).hasClass("lightbox")) {
+            $("body").css("overflow", "auto");
+
             $(this).removeClass("open");
         }
     })
@@ -383,7 +387,7 @@ function lightboxSlideShow() {
     $(".lightbox-category").html(category);
     $(".lightbox-des").html(des);
     $(".lightbox-link").attr("href", link);
-    $(".lightbox-counter").html((index + 1) + "/" + totalWorkItems );
+    $(".lightbox-counter").html((index + 1) + "/" + totalWorkItems);
     widthhh = $(".lightbox-img").width()
     $(".lightbox-des").css("max-width", widthhh + "px");
     console.log(widthhh)
