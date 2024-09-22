@@ -1152,7 +1152,7 @@ h3.my-profession {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 20px 0;
+    padding-bottom: 20px;
 
 }
 
@@ -1161,7 +1161,10 @@ h3.my-profession {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: #f7f7f7;
     padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .lightbox .lightbox-caption .lightbox-captop a {
@@ -1170,10 +1173,12 @@ h3.my-profession {
 
 .lightbox .lightbox-caption .lightbox-category {
     padding-right: 50px;
-    font-size: 22px;
     font-weight: bolder;
     width: fit-content;
     padding-left: 20px;
+    font-size: 35px;
+    color: var(--text-black-900);
+    font-weight: 700px;
 }
 
 
@@ -1194,7 +1199,7 @@ h3.my-profession {
     top: 50px;
     cursor: pointer;
     display: flex;
-    
+
 }
 
 .lightbox .lightbox-controls .prev {
@@ -1360,7 +1365,7 @@ h3.my-profession {
     .about .about-content .education,
     .about .about-content .experience,
     .about .about-content .skills,
-    .about .about-content .skills .skill-item ,
+    .about .about-content .skills .skill-item,
     .about .about-content .personal-info,
     .about .about-content .personal-info .info-item {
         flex: 0 0 100%;
@@ -1386,8 +1391,8 @@ h3.my-profession {
 @media (max-height: 560px) {
 
     .portfolio .portfolio-item-inner .portfolio-img .overlay {
-        display: none !important;
-        visibility: hidden;
+        /* display: none !important;
+        visibility: hidden; */
     }
 
     .portfolio .portfolio-item-inner .portfolio-img:hover img {
@@ -1395,8 +1400,12 @@ h3.my-profession {
     }
 
     .portfolio .portfolio-item-inner .portfolio-img:hover .overlay {
+        /* display: none !important;
+        visibility: hidden; */
+    }
+
+    .btn-detailss{
         display: none !important;
-        visibility: hidden;
     }
 
     .aside .nav {
@@ -1429,7 +1438,7 @@ h3.my-profession {
         height: 40%;
     }
 
-/* 
+    /* 
     .lightbox .lightbox-caption .lightbox-captop a {
         padding: 6px 20px;
     }
@@ -1480,8 +1489,8 @@ h3.my-profession {
     }
 
     .portfolio .portfolio-item-inner .portfolio-img .overlay {
-        display: none !important;
-        visibility: hidden;
+        /* display: none !important;
+        visibility: hidden; */
     }
 
     .portfolio .portfolio-item-inner .portfolio-img:hover img {
@@ -1489,8 +1498,12 @@ h3.my-profession {
     }
 
     .portfolio .portfolio-item-inner .portfolio-img:hover .overlay {
+        /* display: none !important;
+        visibility: hidden; */
+    }
+
+    .btn-detailss{
         display: none !important;
-        visibility: hidden;
     }
 
     .aside .logo .imgbx {
@@ -1730,4 +1743,3 @@ h3.my-profession {
         text-align: center;
     }
 }
-
