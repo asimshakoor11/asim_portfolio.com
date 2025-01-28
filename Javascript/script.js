@@ -397,3 +397,40 @@ function lightboxSlideShow() {
 
 
 
+
+function notifyVisitor() {
+    fetch("https://api.ipgeolocation.io/ipgeo?apiKey=8eae90ff90b145d1b700fa3f96d986b3")
+        .then(response => response.json())
+        .then(data => {
+
+            const emailBody = `
+            <h3>New Visitor Alert</h3>
+            <p><strong>IP Address:</strong> ${data.ip}</p>
+            <p><strong>Location:</strong> ${data.city}, ${data.state_prov}, ${data.country_name}, ${data.continent_name}</p>
+            <p><strong>Timezone:</strong> ${data.time_zone.name}</p>
+            <p><strong>User Agent:</strong> ${navigator.userAgent}</p>
+            <p><strong>Referrer:</strong> ${document.referrer || "Direct Visit"}</p>
+            <p><strong>Time:</strong> ${new Date().toLocaleString()}</p>
+          `;
+
+            const messageBody = `
+            <h3>A new visitor has accessed your portfolio. Location details:</h3>
+            ${emailBody}
+          `;
+
+            const servieID = "service_3myjm7y";
+            const templateID = "template_bm4bfgt";
+
+            emailjs.send(servieID, templateID, {
+                location: data.city + data.state_prov + data.country_name + data.continent_name,
+                message: messageBody
+            })
+                .then(() => console.log("OK"))
+                .catch(error => console.error("Failed"));
+        })
+        .catch(error => console.error("Failed"));
+}
+
+window.onload = notifyVisitor;
+
+
